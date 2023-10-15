@@ -1,17 +1,20 @@
 import { useState } from 'react'
-import { Card, Box } from '@chakra-ui/react'
+import { Card, Box, VStack, Container, Center } from '@chakra-ui/react'
 import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+import Header from './component/Header'
+import Chart from './component/Chart'
+import { Text, Code, Heading, theme, ColorModeProvider, CSSReset, ThemeProvider } from '@chakra-ui/react'
+function App () {
   return (
     <>
-      <Box w="100%" p={4} color="white">
-        <Card>
-          <h1>Hello Vite + React!</h1>
-        </Card>
-      </Box>
+      <ThemeProvider theme={theme}>
+        <ColorModeProvider>
+          <CSSReset />
+          <Box w="150%" h="100%" p={4} color="white">
+            <Chart />
+          </Box>
+        </ColorModeProvider>
+      </ThemeProvider>
     </>
   )
 }
